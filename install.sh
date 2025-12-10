@@ -297,7 +297,8 @@ install_commands() {
     local dest_dir="$CLAUDE_DIR/commands"
 
     cp "$source_dir/dev-docs.md" "$dest_dir/" 2>/dev/null || true
-    print_success "dev-docs command installed"
+    cp "$source_dir/dev-docs-update.md" "$dest_dir/" 2>/dev/null || true
+    print_success "Commands installed (dev-docs, dev-docs-update)"
 }
 
 ################################################################################
