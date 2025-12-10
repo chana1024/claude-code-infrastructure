@@ -34,8 +34,8 @@ CYAN='\033[0;36m'
 NC='\033[0m'
 
 # Repository
-REPO_URL="https://raw.githubusercontent.com/YOUR_USERNAME/claude-code-infrastructure-showcase/main"
-REPO_GIT="https://github.com/YOUR_USERNAME/claude-code-infrastructure-showcase.git"
+REPO_URL="https://raw.githubusercontent.com/chana1024/claude-code-infrastructure/main"
+REPO_GIT="https://github.com/chana1024/claude-code-infrastructure.git"
 
 # Project directory
 PROJECT_DIR=$(pwd)
