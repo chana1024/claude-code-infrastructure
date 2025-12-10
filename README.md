@@ -6,6 +6,23 @@ Born from 6 months of real-world use managing a complex TypeScript microservices
 
 > **This is NOT a working application** - it's a reference library. Copy what you need into your own projects.
 
+## 🚀 Quick Install (Project-Level)
+
+Install infrastructure to your project in **2 minutes** with interactive setup:
+
+```bash
+cd your-project
+curl -fsSL https://raw.githubusercontent.com/YOUR_USERNAME/claude-code-infrastructure-showcase/main/install.sh | bash
+```
+
+**What happens:**
+1. ✅ Auto-detects your project type (Node.js/Express, React/MUI)
+2. ✅ Asks which skills to install (backend, frontend, etc.)
+3. ✅ Auto-configures paths based on your project structure
+4. ✅ Installs to `.claude/` directory (ready for git commit)
+
+**📖 [Detailed Installation Guide →](INSTALL_GUIDE_CN.md)**
+
 ---
 
 ## What's Inside
