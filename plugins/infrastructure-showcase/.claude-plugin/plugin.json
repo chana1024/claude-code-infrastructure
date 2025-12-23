@@ -1,0 +1,42 @@
+{
+  "name": "infrastructure-showcase",
+  "description": "Complete infrastructure bundle: auto-activating skills, specialized agents, hooks, and slash commands.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Code Infrastructure Showcase"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/chana1024/claude-code-infrastructure",
+  "keywords": [
+    "claude-code",
+    "skills",
+    "agents",
+    "hooks",
+    "infrastructure"
+  ],
+  "commands": [
+    "./commands/dev-docs.md",
+    "./commands/dev-docs-update.md",
+    "./commands/route-research-for-testing.md"
+  ],
+  "agents": [
+    "./agents/code-architecture-reviewer.md",
+    "./agents/code-refactor-master.md",
+    "./agents/documentation-architect.md",
+    "./agents/frontend-error-fixer.md",
+    "./agents/plan-reviewer.md",
+    "./agents/refactor-planner.md",
+    "./agents/web-research-specialist.md",
+    "./agents/auth-route-tester.md",
+    "./agents/auth-route-debugger.md",
+    "./agents/auto-error-resolver.md"
+  ],
+  "skills": [
+    "./skills/backend-dev-guidelines",
+    "./skills/frontend-dev-guidelines",
+    "./skills/skill-developer",
+    "./skills/route-tester",
+    "./skills/error-tracking"
+  ],
+  "hooks": "./hooks/hooks.json"
+}

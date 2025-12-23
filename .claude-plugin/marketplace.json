@@ -1,0 +1,58 @@
+{
+  "name": "claude-code-infrastructure",
+  "owner": {
+    "name": "Claude Code Infrastructure Showcase",
+    "email": "chana1024@users.noreply.github.com"
+  },
+  "metadata": {
+    "description": "Production-tested Claude Code infrastructure with auto-activating skills, specialized agents, and dev docs pattern.",
+    "version": "1.0.0",
+    "repository": "https://github.com/chana1024/claude-code-infrastructure"
+  },
+  "plugins": [
+    {
+      "name": "infrastructure-showcase",
+      "source": "./plugins/infrastructure-showcase",
+      "description": "Complete infrastructure bundle: auto-activating skills, specialized agents, hooks, and slash commands. Born from 6 months of real-world use managing complex TypeScript microservices.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Claude Code Infrastructure Showcase"
+      },
+      "license": "MIT",
+      "repository": "https://github.com/chana1024/claude-code-infrastructure",
+      "keywords": [
+        "claude-code",
+        "skills",
+        "agents",
+        "hooks",
+        "typescript",
+        "react",
+        "node.js",
+        "express",
+        "infrastructure"
+      ]
+    },
+    {
+      "name": "backend-guidelines",
+      "source": "./plugins/backend-guidelines",
+      "description": "Node.js/Express/TypeScript backend development guidelines with Prisma and Sentry patterns.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Claude Code Infrastructure Showcase"
+      },
+      "license": "MIT",
+      "keywords": ["backend", "express", "typescript", "prisma", "node.js"]
+    },
+    {
+      "name": "frontend-guidelines",
+      "source": "./plugins/frontend-guidelines",
+      "description": "React/TypeScript/MUI v7 frontend development guidelines with component patterns.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Claude Code Infrastructure Showcase"
+      },
+      "license": "MIT",
+      "keywords": ["frontend", "react", "typescript", "mui", "material-ui"]
+    }
+  ]
+}

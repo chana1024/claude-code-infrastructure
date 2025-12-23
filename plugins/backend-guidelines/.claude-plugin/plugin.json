@@ -1,0 +1,14 @@
+{
+  "name": "backend-guidelines",
+  "description": "Node.js/Express/TypeScript backend development guidelines with Prisma and Sentry patterns.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Code Infrastructure Showcase"
+  },
+  "license": "MIT",
+  "keywords": ["backend", "express", "typescript", "prisma", "node.js"],
+  "skills": [
+    "./skills/backend-dev-guidelines",
+    "./skills/error-tracking"
+  ]
+}

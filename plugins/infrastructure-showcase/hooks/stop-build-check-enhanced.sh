@@ -10,8 +10,8 @@ event_info=$(cat)
 # Extract session ID
 session_id=$(echo "$event_info" | jq -r '.session_id // empty')
 
-# Cache directory in project
-cache_dir="$CLAUDE_PROJECT_DIR/.claude/tsc-cache/${session_id:-default}"
+# Cache directory (use user's home for cross-project compatibility)
+cache_dir="$HOME/.claude/tsc-cache/${session_id:-default}"
 
 # Check if cache exists
 if [[ ! -d "$cache_dir" ]]; then

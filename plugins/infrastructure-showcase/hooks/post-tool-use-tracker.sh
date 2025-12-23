@@ -25,8 +25,8 @@ if [[ "$file_path" =~ \.(md|markdown)$ ]]; then
     exit 0  # Exit 0 for skip conditions
 fi
 
-# Create cache directory in project
-cache_dir="$CLAUDE_PROJECT_DIR/.claude/tsc-cache/${session_id:-default}"
+# Create cache directory (use user's home for cross-project compatibility)
+cache_dir="$HOME/.claude/tsc-cache/${session_id:-default}"
 mkdir -p "$cache_dir"
 
 # Function to detect repo from file path

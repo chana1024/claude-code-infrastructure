@@ -1,0 +1,13 @@
+{
+  "name": "frontend-guidelines",
+  "description": "React/TypeScript/MUI v7 frontend development guidelines with component patterns.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Code Infrastructure Showcase"
+  },
+  "license": "MIT",
+  "keywords": ["frontend", "react", "typescript", "mui", "material-ui"],
+  "skills": [
+    "./skills/frontend-dev-guidelines"
+  ]
+}

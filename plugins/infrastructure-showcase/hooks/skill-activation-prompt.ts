@@ -40,9 +40,17 @@ async function main() {
         const data: HookInput = JSON.parse(input);
         const prompt = data.prompt.toLowerCase();
 
-        // Load skill rules
+        // Load skill rules (support both plugin mode and project mode)
+        const pluginRoot = process.env.CLAUDE_PLUGIN_ROOT;
         const projectDir = process.env.CLAUDE_PROJECT_DIR || '$HOME/project';
-        const rulesPath = join(projectDir, '.claude', 'skills', 'skill-rules.json');
+
+        // Try plugin root first, then fall back to project dir
+        let rulesPath: string;
+        if (pluginRoot) {
+            rulesPath = join(pluginRoot, 'skills', 'skill-rules.json');
+        } else {
+            rulesPath = join(projectDir, '.claude', 'skills', 'skill-rules.json');
+        }
         const rules: SkillRules = JSON.parse(readFileSync(rulesPath, 'utf-8'));
 
         const matchedSkills: MatchedSkill[] = [];

@@ -4,11 +4,55 @@
 
 Born from 6 months of real-world use managing a complex TypeScript microservices project, this showcase provides the patterns and systems that solved the "skills don't activate automatically" problem and scaled Claude Code for enterprise development.
 
-> **This is NOT a working application** - it's a reference library. Copy what you need into your own projects.
+> **This is NOT a working application** - it's a reference library. Copy what you need into your own projects or install as a Claude Code plugin.
 
-## 🚀 Quick Install (Project-Level)
+## Quick Install
 
-Install infrastructure to your project in **2 minutes** with interactive setup:
+### Option 1: Install from Marketplace (Recommended)
+
+First, add this marketplace to Claude Code:
+
+```bash
+# Add marketplace from GitHub
+/plugin marketplace add chana1024/claude-code-infrastructure
+```
+
+Then install the plugin you need:
+
+```bash
+# Full bundle (skills + agents + hooks + commands)
+/plugin install infrastructure-showcase@claude-code-infrastructure
+
+# Backend only (Node.js/Express/TypeScript skills)
+/plugin install backend-guidelines@claude-code-infrastructure
+
+# Frontend only (React/MUI/TypeScript skills)
+/plugin install frontend-guidelines@claude-code-infrastructure
+```
+
+**Available plugins:**
+
+| Plugin | Description |
+|--------|-------------|
+| `infrastructure-showcase` | Complete bundle: all skills, agents, hooks, commands |
+| `backend-guidelines` | Backend skills: Express, Prisma, Sentry patterns |
+| `frontend-guidelines` | Frontend skills: React, MUI v7, TypeScript patterns |
+
+### Option 2: Local Installation
+
+For development or customization:
+
+```bash
+# Add as local marketplace
+/plugin marketplace add /path/to/claude-code-infrastructure-showcase
+
+# Then install plugins as above
+/plugin install infrastructure-showcase@claude-code-infrastructure
+```
+
+### Option 3: Project-Level Installation (Script)
+
+Install infrastructure to your project with interactive setup:
 
 ```bash
 cd your-project
@@ -16,23 +60,21 @@ curl -fsSL https://raw.githubusercontent.com/chana1024/claude-code-infrastructur
 ```
 
 **What happens:**
-1. ✅ Auto-detects your project type (Node.js/Express, React/MUI)
-2. ✅ Asks which skills to install (backend, frontend, etc.)
-3. ✅ Auto-configures paths based on your project structure
-4. ✅ Installs to `.claude/` directory (ready for git commit)
-
-**📖 [Detailed Installation Guide →](INSTALL_GUIDE_CN.md)**
+1. Auto-detects your project type (Node.js/Express, React/MUI)
+2. Asks which skills to install (backend, frontend, etc.)
+3. Auto-configures paths based on your project structure
+4. Installs to `.claude/` directory (ready for git commit)
 
 ---
 
 ## What's Inside
 
 **Production-tested infrastructure for:**
-- ✅ **Auto-activating skills** via hooks
-- ✅ **Modular skill pattern** (500-line rule with progressive disclosure)
-- ✅ **Specialized agents** for complex tasks
-- ✅ **Dev docs system** that survives context resets
-- ✅ **Comprehensive examples** using generic blog domain
+- **Auto-activating skills** via hooks
+- **Modular skill pattern** (500-line rule with progressive disclosure)
+- **Specialized agents** for complex tasks
+- **Dev docs system** that survives context resets
+- **Comprehensive examples** using generic blog domain
 
 **Time investment to build:** 6 months of iteration
 **Time to integrate into your project:** 15-30 minutes
@@ -41,11 +83,11 @@ curl -fsSL https://raw.githubusercontent.com/chana1024/claude-code-infrastructur
 
 ## Quick Start - Pick Your Path
 
-### 🤖 Using Claude Code to Integrate?
+### Using Claude Code to Integrate?
 
 **Claude:** Read [`CLAUDE_INTEGRATION_GUIDE.md`](CLAUDE_INTEGRATION_GUIDE.md) for step-by-step integration instructions tailored for AI-assisted setup.
 
-### 🎯 I want skill auto-activation
+### I want skill auto-activation
 
 **The breakthrough feature:** Skills that actually activate when you need them.
 
@@ -54,11 +96,11 @@ curl -fsSL https://raw.githubusercontent.com/chana1024/claude-code-infrastructur
 2. A skill or two relevant to your work
 3. 15 minutes
 
-**👉 [Setup Guide: .claude/hooks/README.md](.claude/hooks/README.md)**
+**[Setup Guide: plugins/infrastructure-showcase/hooks/README.md](plugins/infrastructure-showcase/hooks/README.md)**
 
-### 📚 I want to add ONE skill
+### I want to add ONE skill
 
-Browse the [skills catalog](.claude/skills/) and copy what you need.
+Browse the [skills catalog](plugins/infrastructure-showcase/skills/) and copy what you need.
 
 **Available:**
 - **backend-dev-guidelines** - Node.js/Express/TypeScript patterns
@@ -67,9 +109,9 @@ Browse the [skills catalog](.claude/skills/) and copy what you need.
 - **route-tester** - Test authenticated API routes
 - **error-tracking** - Sentry integration patterns
 
-**👉 [Skills Guide: .claude/skills/README.md](.claude/skills/README.md)**
+**[Skills Guide: plugins/infrastructure-showcase/skills/README.md](plugins/infrastructure-showcase/skills/README.md)**
 
-### 🤖 I want specialized agents
+### I want specialized agents
 
 10 production-tested agents for complex tasks:
 - Code architecture review
@@ -78,7 +120,7 @@ Browse the [skills catalog](.claude/skills/) and copy what you need.
 - Error debugging
 - And more...
 
-**👉 [Agents Guide: .claude/agents/README.md](.claude/agents/README.md)**
+**[Agents Guide: plugins/infrastructure-showcase/agents/README.md](plugins/infrastructure-showcase/agents/README.md)**
 
 ---
 
@@ -99,11 +141,11 @@ Browse the [skills catalog](.claude/skills/) and copy what you need.
 ### Production-Tested Patterns
 
 These aren't theoretical examples - they're extracted from:
-- ✅ 6 microservices in production
-- ✅ 50,000+ lines of TypeScript
-- ✅ React frontend with complex data grids
-- ✅ Sophisticated workflow engine
-- ✅ 6 months of daily Claude Code use
+- 6 microservices in production
+- 50,000+ lines of TypeScript
+- React frontend with complex data grids
+- Sophisticated workflow engine
+- 6 months of daily Claude Code use
 
 The patterns work because they solved real problems.
 
@@ -124,70 +166,83 @@ skill-name/
 
 ---
 
-## Repository Structure
+## Marketplace Structure
+
+This repository is structured as a Claude Code **marketplace** containing multiple plugins:
 
 ```
-.claude/
-├── skills/                 # 5 production skills
-│   ├── backend-dev-guidelines/  (12 resource files)
-│   ├── frontend-dev-guidelines/ (11 resource files)
-│   ├── skill-developer/         (7 resource files)
-│   ├── route-tester/
-│   ├── error-tracking/
-│   └── skill-rules.json    # Skill activation configuration
-├── hooks/                  # 6 hooks for automation
-│   ├── skill-activation-prompt.*  (ESSENTIAL)
-│   ├── post-tool-use-tracker.sh   (ESSENTIAL)
-│   ├── tsc-check.sh        (optional, needs customization)
-│   └── trigger-build-resolver.sh  (optional)
-├── agents/                 # 10 specialized agents
-│   ├── code-architecture-reviewer.md
-│   ├── refactor-planner.md
-│   ├── frontend-error-fixer.md
-│   └── ... 7 more
-└── commands/               # 3 slash commands
-    ├── dev-docs.md
-    └── ...
-
-dev/
-└── active/                 # Dev docs pattern examples
-    └── public-infrastructure-repo/
+claude-code-infrastructure-showcase/
+├── .claude-plugin/
+│   └── marketplace.json        # Marketplace manifest
+├── plugins/
+│   ├── infrastructure-showcase/    # Complete bundle
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json
+│   │   ├── plugins/infrastructure-showcase/skills/             # 5 production skills
+│   │   ├── plugins/infrastructure-showcase/hooks/              # 6 automation hooks
+│   │   ├── plugins/infrastructure-showcase/agents/             # 10 specialized agents
+│   │   └── commands/           # 3 slash commands
+│   ├── backend-guidelines/     # Backend-only plugin
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json
+│   │   └── plugins/infrastructure-showcase/skills/
+│   │       ├── backend-dev-guidelines/
+│   │       └── error-tracking/
+│   └── frontend-guidelines/    # Frontend-only plugin
+│       ├── .claude-plugin/
+│       │   └── plugin.json
+│       └── plugins/infrastructure-showcase/skills/
+│           └── frontend-dev-guidelines/
+├── plugins/infrastructure-showcase/skills/                     # Reference copies (for install.sh)
+├── plugins/infrastructure-showcase/hooks/
+├── plugins/infrastructure-showcase/agents/
+├── commands/
+└── dev/
+    └── active/                 # Dev docs pattern examples
 ```
+
+**Plugins available:**
+
+| Plugin | Contents |
+|--------|----------|
+| `infrastructure-showcase` | All skills, agents, hooks, commands |
+| `backend-guidelines` | Backend + error-tracking skills only |
+| `frontend-guidelines` | Frontend skills only |
 
 ---
 
 ## Component Catalog
 
-### 🎨 Skills (5)
+### Skills (5)
 
 | Skill | Lines | Purpose | Best For |
 |-------|-------|---------|----------|
-| [**skill-developer**](.claude/skills/skill-developer/) | 426 | Creating and managing skills | Meta-development |
-| [**backend-dev-guidelines**](.claude/skills/backend-dev-guidelines/) | 304 | Express/Prisma/Sentry patterns | Backend APIs |
-| [**frontend-dev-guidelines**](.claude/skills/frontend-dev-guidelines/) | 398 | React/MUI v7/TypeScript | React frontends |
-| [**route-tester**](.claude/skills/route-tester/) | 389 | Testing authenticated routes | API testing |
-| [**error-tracking**](.claude/skills/error-tracking/) | ~250 | Sentry integration | Error monitoring |
+| [**skill-developer**](plugins/infrastructure-showcase/skills/skill-developer/) | 426 | Creating and managing skills | Meta-development |
+| [**backend-dev-guidelines**](plugins/infrastructure-showcase/skills/backend-dev-guidelines/) | 304 | Express/Prisma/Sentry patterns | Backend APIs |
+| [**frontend-dev-guidelines**](plugins/infrastructure-showcase/skills/frontend-dev-guidelines/) | 398 | React/MUI v7/TypeScript | React frontends |
+| [**route-tester**](plugins/infrastructure-showcase/skills/route-tester/) | 389 | Testing authenticated routes | API testing |
+| [**error-tracking**](plugins/infrastructure-showcase/skills/error-tracking/) | ~250 | Sentry integration | Error monitoring |
 
 **All skills follow the modular pattern** - main file + resource files for progressive disclosure.
 
-**👉 [How to integrate skills →](.claude/skills/README.md)**
+**[How to integrate skills](plugins/infrastructure-showcase/skills/README.md)**
 
-### 🪝 Hooks (6)
+### Hooks (6)
 
 | Hook | Type | Essential? | Customization |
 |------|------|-----------|---------------|
-| skill-activation-prompt | UserPromptSubmit | ✅ YES | ✅ None needed |
-| post-tool-use-tracker | PostToolUse | ✅ YES | ✅ None needed |
-| tsc-check | Stop | ⚠️ Optional | ⚠️ Heavy - monorepo only |
-| trigger-build-resolver | Stop | ⚠️ Optional | ⚠️ Heavy - monorepo only |
-| error-handling-reminder | Stop | ⚠️ Optional | ⚠️ Moderate |
-| stop-build-check-enhanced | Stop | ⚠️ Optional | ⚠️ Moderate |
+| skill-activation-prompt | UserPromptSubmit | YES | None needed |
+| post-tool-use-tracker | PostToolUse | YES | None needed |
+| tsc-check | Stop | Optional | Heavy - monorepo only |
+| trigger-build-resolver | Stop | Optional | Heavy - monorepo only |
+| error-handling-reminder | Stop | Optional | Moderate |
+| stop-build-check-enhanced | Stop | Optional | Moderate |
 
 **Start with the two essential hooks** - they enable skill auto-activation and work out of the box.
 
-**👉 [Hook setup guide →](.claude/hooks/README.md)**
+**[Hook setup guide](plugins/infrastructure-showcase/hooks/README.md)**
 
-### 🤖 Agents (10)
+### Agents (10)
 
 **Standalone - just copy and use!**
 
@@ -204,15 +259,17 @@ dev/
 | auth-route-debugger | Debug auth issues |
 | auto-error-resolver | Auto-fix TypeScript errors |
 
-**👉 [How agents work →](.claude/agents/README.md)**
+**[How agents work](plugins/infrastructure-showcase/agents/README.md)**
 
-### 💬 Slash Commands (3)
+### Slash Commands (3)
+
+When installed as a plugin, commands are namespaced:
 
 | Command | Purpose |
 |---------|---------|
-| /dev-docs | Create structured dev documentation |
-| /dev-docs-update | Update docs before context reset |
-| /route-research-for-testing | Research route patterns for testing |
+| /infrastructure-showcase:dev-docs | Create structured dev documentation |
+| /infrastructure-showcase:dev-docs-update | Update docs before context reset |
+| /infrastructure-showcase:route-research-for-testing | Research route patterns for testing |
 
 ---
 
@@ -252,18 +309,7 @@ dev/
 
 ---
 
-## ⚠️ Important: What Won't Work As-Is
-
-### settings.json
-The included `settings.json` is an **example only**:
-- Stop hooks reference specific monorepo structure
-- Service names (blog-api, etc.) are examples
-- MCP servers may not exist in your setup
-
-**To use it:**
-1. Extract ONLY UserPromptSubmit and PostToolUse hooks
-2. Customize or skip Stop hooks
-3. Update MCP server list for your setup
+## Important: What Won't Work As-Is
 
 ### Blog Domain Examples
 Skills use generic blog examples (Post/Comment/User):
@@ -327,21 +373,21 @@ When helping users integrate:
 
 ### Before This Infrastructure
 
-❌ Skills don't activate automatically
-❌ Have to remember which skill to use
-❌ Large skills hit context limits
-❌ Context resets lose project knowledge
-❌ No consistency across development
-❌ Manual agent invocation every time
+- Skills don't activate automatically
+- Have to remember which skill to use
+- Large skills hit context limits
+- Context resets lose project knowledge
+- No consistency across development
+- Manual agent invocation every time
 
 ### After This Infrastructure
 
-✅ Skills suggest themselves based on context
-✅ Hooks trigger skills at the right time
-✅ Modular skills stay under context limits
-✅ Dev docs preserve knowledge across resets
-✅ Consistent patterns via guardrails
-✅ Agents streamline complex tasks
+- Skills suggest themselves based on context
+- Hooks trigger skills at the right time
+- Modular skills stay under context limits
+- Dev docs preserve knowledge across resets
+- Consistent patterns via guardrails
+- Agents streamline complex tasks
 
 ---
 
@@ -349,14 +395,13 @@ When helping users integrate:
 
 **Found this useful?**
 
-- ⭐ Star this repo
-- 🐛 Report issues or suggest improvements
-- 💬 Share your own skills/hooks/agents
-- 📝 Contribute examples from your domain
+- Star this repo
+- Report issues or suggest improvements
+- Share your own plugins/infrastructure-showcase/skills/plugins/infrastructure-showcase/hooks/agents
+- Contribute examples from your domain
 
 **Background:**
 This infrastructure was detailed in a post I made to Reddit ["Claude Code is a Beast – Tips from 6 Months of Hardcore Use"](https://www.reddit.com/r/ClaudeAI/comments/1oivjvm/claude_code_is_a_beast_tips_from_6_months_of/). After hundreds of requests, this showcase was created to help the community implement these patterns.
-
 
 ---
 
@@ -368,10 +413,10 @@ MIT License - Use freely in your projects, commercial or personal.
 
 ## Quick Links
 
-- 📖 [Claude Integration Guide](CLAUDE_INTEGRATION_GUIDE.md) - For AI-assisted setup
-- 🎨 [Skills Documentation](.claude/skills/README.md)
-- 🪝 [Hooks Setup](.claude/hooks/README.md)
-- 🤖 [Agents Guide](.claude/agents/README.md)
-- 📝 [Dev Docs Pattern](dev/README.md)
+- [Claude Integration Guide](CLAUDE_INTEGRATION_GUIDE.md) - For AI-assisted setup
+- [Skills Documentation](plugins/infrastructure-showcase/skills/README.md)
+- [Hooks Setup](plugins/infrastructure-showcase/hooks/README.md)
+- [Agents Guide](plugins/infrastructure-showcase/agents/README.md)
+- [Dev Docs Pattern](dev/README.md)
 
-**Start here:** Copy the two essential hooks, add one skill, and see the auto-activation magic happen.
+**Start here:** Install as a plugin or copy the two essential hooks, add one skill, and see the auto-activation magic happen.
