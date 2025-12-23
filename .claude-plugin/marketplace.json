@@ -1,13 +1,13 @@
 {
-  "name": "claude-code-infrastructure",
+  "name": "lzn-cc-marketplace",
   "owner": {
-    "name": "Claude Code Infrastructure Showcase",
-    "email": "chana1024@users.noreply.github.com"
+    "name": "lzn",
+    "email": "linzhinan1024@gmail.com"
   },
   "metadata": {
-    "description": "Production-tested Claude Code infrastructure with auto-activating skills, specialized agents, and dev docs pattern.",
+    "description": "Marketplace for LZN CC",
     "version": "1.0.0",
-    "repository": "https://github.com/chana1024/claude-code-infrastructure"
+    "repository": "https://github.com/chana1024/lzn-cc-marketplace"
   },
   "plugins": [
     {
@@ -19,7 +19,7 @@
         "name": "Claude Code Infrastructure Showcase"
       },
       "license": "MIT",
-      "repository": "https://github.com/chana1024/claude-code-infrastructure",
+      "repository": "https://github.com/chana1024/lzn-cc-marketplace",
       "keywords": [
         "claude-code",
         "skills",
